@@ -1,0 +1,44 @@
+definitions:
+  model.TestData:
+    properties:
+      count:
+        type: integer
+      name:
+        type: string
+    type: object
+info:
+  contact: {}
+paths:
+  /test:
+    get:
+      description: 用来测试的接口
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+      summary: 测试接口
+      tags:
+      - demo
+  /test1:
+    post:
+      description: 用来测试的接口1
+      parameters:
+      - description: 你的名字
+        in: formData
+        name: name
+        required: true
+        type: string
+      - description: 用户Token
+        in: header
+        name: usertoken
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.TestData'
+      summary: 测试接口1
+      tags:
+      - demo
+swagger: "2.0"

@@ -1,0 +1,21 @@
+[server]
+debug = true
+showsql = true
+port = 3000
+
+#[redis]
+#addr = "redistest.kuaibang360.com:6379"
+#password = "123456"
+#db = 0
+
+[db.default]
+#url = "root:6u6XyfbVZVl5Cyod@tcp(mysqltest.kuaibang360.com:3306)/gongyoubangs?charset=utf8mb4"
+#url = "gongyoubangs:0zYzyCHucPbsH36z@tcp(mysqlpublic.kuaibang360.com:3306)/gongyoubangs?charset=utf8mb4"
+type = "mysql"
+
+[appConfig]
+api = "testapi"
+#superToken = "!000_" # 模拟用户登录的超级TOKEN
+#smsurl = "http://gybsmstest.kuaibang360.com"
+##fileUrl="http://files.kuaibang360.com" #正式环境的文件地址
+#fileUrl="http://filestest.kuaibang360.com" #测试的文件地址
