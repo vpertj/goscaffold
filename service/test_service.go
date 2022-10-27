@@ -6,7 +6,7 @@ type TestService struct {
 }
 
 func (*TestService) Test(id int) (string, error) {
-	user := new()
+
 	orm := db.GetOrm()
 	orm.Where("id", id).Get()
 

@@ -8,4 +8,4 @@ targets:
     include_tables:
       - user
     language: golang
-    output_dir: ../model/mydb
+    output_dir: ./model/mydb
