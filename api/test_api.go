@@ -3,6 +3,7 @@ package api
 import (
 	"github.com/gofiber/fiber/v2"
 	"github.com/sirupsen/logrus"
+	"github.com/vpertj/gotool"
 	"goscaffold/model"
 	"goscaffold/model/db"
 	"goscaffold/model/web"
@@ -24,10 +25,12 @@ type testApi struct {
 // @Summary     测试接口
 // @Description 用来测试的接口
 // @Tags        demo
+// @Param       id        formData  int  true   "id"
 // @Success     200 {string} string
 // @Router      /test [get]
 func (api *testApi) test(c *fiber.Ctx) error {
-	data, err := new(service.TestService).Test()
+	id := gotool.ToInt(c.Query("id"))
+	data, err := new(service.TestService).Test(id)
 	if err != nil {
 		return web.OutState(c, web.Fail, err.Error())
 	}

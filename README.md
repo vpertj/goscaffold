@@ -19,6 +19,13 @@ https://xorm.io/zh/
 日志组件 logrus
 https://github.com/sirupsen/logrus
 
+
+数据库结构生成,依赖cgo需要安装gcc环境
+go install xorm.io/reverse@latest
+生成命令:
+reverse -f mydbtables.yml
+
+
 配置文件访问 config.GetConfig()
 https://github.com/jinzhu/configor
 

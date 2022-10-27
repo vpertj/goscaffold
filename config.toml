@@ -9,8 +9,7 @@ port = 3000
 #db = 0
 
 [db.default]
-#url = "root:6u6XyfbVZVl5Cyod@tcp(mysqltest.kuaibang360.com:3306)/gongyoubangs?charset=utf8mb4"
-#url = "gongyoubangs:0zYzyCHucPbsH36z@tcp(mysqlpublic.kuaibang360.com:3306)/gongyoubangs?charset=utf8mb4"
+url = "root:root@tcp(localhost:3306)/mytest?charset=utf8mb4"
 type = "mysql"
 
 [appConfig]

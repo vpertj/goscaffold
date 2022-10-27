@@ -1,0 +1,11 @@
+kind: reverse
+name: mydb
+source:
+  database: mysql
+  conn_str: 'root:root@tcp(localhost:3306)/mytest?charset=utf8mb4'
+targets:
+  - type: codes
+    include_tables:
+      - user
+    language: golang
+    output_dir: ../model/mydb
