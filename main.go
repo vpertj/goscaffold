@@ -15,6 +15,7 @@ import (
 	"goscaffold/routes"
 	// 2.引入接口代码
 	_ "goscaffold/api"
+	_ "goscaffold/api/user"
 
 	// 3.数据库初始化
 	_ "goscaffold/model/db"
@@ -22,7 +23,14 @@ import (
 
 func main() {
 	logrus.Info("接口开始启动")
+	routes.RunCommand()
 	app := routes.New()
-	logrus.Panic(app.Listen(fmt.Sprintf(":%v", config.GetConfig().Server.Port)))
+	logrus.Info(app.Listen(fmt.Sprintf(":%v", config.GetConfig().Server.Port)))
 
 }
+
+//获取短信验证码方法
+
+//用户登录接口
+
+//用户注册接口

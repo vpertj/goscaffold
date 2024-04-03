@@ -55,7 +55,7 @@ func middlewareAuth(c *fiber.Ctx) error {
 			continue
 		}
 		if uri[:pathLen] == path {
-			logrus.Debug("😉排除接口:", path)
+			logrus.Debug("😉 排除接口:", path)
 			return c.Next()
 		}
 	}

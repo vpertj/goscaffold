@@ -11,11 +11,12 @@ import (
 	"goscaffold/service"
 )
 
-//初始化路由
+// 初始化路由
 func init() {
 	test := new(testApi)
 	routes.GetV1Router().Get("/test", test.test)
 	routes.GetV1Router().Post("/test1", test.test1)
+
 }
 
 type testApi struct {
@@ -24,7 +25,7 @@ type testApi struct {
 // test 一个测试接口
 // @Summary     测试接口
 // @Description 用来测试的接口
-// @Tags        demo
+// @Tags        Demo
 // @Param       id        formData  int  true   "id"
 // @Success     200 {string} string
 // @Router      /test [get]
@@ -53,7 +54,7 @@ func (api *testApi) test(c *fiber.Ctx) error {
 // test1 一个测试接口
 // @Summary     测试接口1
 // @Description 用来测试的接口1
-// @Tags        demo
+// @Tags        Demo
 // @Param       name             formData string true   "你的名字"
 // @Param       usertoken header                 string  false "用户Token"
 // @Success     200              {object} model.TestData

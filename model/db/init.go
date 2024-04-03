@@ -48,7 +48,7 @@ func syncTable() {
 	[xorm] [warn]  2022/05/09 16:29:55.817355 Table test_table Column age db default is 1, struct default is 0
 	*/
 	err := orm.Sync2(
-	//new(PmEnterprise), //企业表
+
 	//new(PmManager),    //用户表
 	//new(PmRole),       //角色表
 

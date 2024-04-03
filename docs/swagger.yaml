@@ -12,6 +12,12 @@ paths:
   /test:
     get:
       description: 用来测试的接口
+      parameters:
+      - description: id
+        in: formData
+        name: id
+        required: true
+        type: integer
       responses:
         "200":
           description: OK
@@ -19,7 +25,7 @@ paths:
             type: string
       summary: 测试接口
       tags:
-      - demo
+      - Demo
   /test1:
     post:
       description: 用来测试的接口1
@@ -40,5 +46,22 @@ paths:
             $ref: '#/definitions/model.TestData'
       summary: 测试接口1
       tags:
-      - demo
+      - Demo
+  /user/login:
+    post:
+      description: 用户登录接口
+      parameters:
+      - description: 手机号
+        in: formData
+        name: usertel
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+      summary: 用户登录接口
+      tags:
+      - user 用户管理
 swagger: "2.0"

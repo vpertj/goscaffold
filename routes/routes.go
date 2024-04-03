@@ -1,11 +1,15 @@
 package routes
 
 import (
+	"bytes"
 	"fmt"
-	"github.com/gofiber/fiber/v2"
 	"goscaffold/docs"
 	"goscaffold/model/config"
+	"os"
+	"os/exec"
 	"runtime"
+
+	"github.com/gofiber/fiber/v2"
 
 	swagger "github.com/arsmn/fiber-swagger/v2"
 	"github.com/gofiber/fiber/v2/middleware/compress"
@@ -18,7 +22,9 @@ import (
 var app *fiber.App
 
 func init() {
-	app = fiber.New()
+	app = fiber.New(fiber.Config{
+		BodyLimit: 2 * 1024 * 1024 * 1024,
+	})
 	app.Use(cors.New())
 	app.Use(compress.New())
 	// 恐慌恢复中间件
@@ -38,9 +44,9 @@ func init() {
 	}))
 	// 配置swagger
 	// 修改 swagger 信息
-	docs.SwaggerInfo.Title = "PMApi"
+	docs.SwaggerInfo.Title = "testApi"
 	docs.SwaggerInfo.Version = "1.0"
-	docs.SwaggerInfo.Description = "工友帮智慧用工项目管理系统接口."
+	docs.SwaggerInfo.Description = "系统接口."
 	docs.SwaggerInfo.BasePath = "/api/v1"
 	docs.SwaggerInfo.Schemes = []string{"http", "https"}
 
@@ -65,4 +71,18 @@ func GetV1Router() fiber.Router {
 
 func New() *fiber.App {
 	return app
+}
+
+// 执行swag init 来初始化swagger文档
+func RunCommand() {
+	cmd := exec.Command("swag", "init")
+	fmt.Println("Cmd", cmd.Args)
+	var out bytes.Buffer
+	cmd.Stdout = &out
+	cmd.Stderr = os.Stderr
+	err := cmd.Start()
+	if err != nil {
+		fmt.Println(err)
+	}
+	fmt.Println(out.String())
 }

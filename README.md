@@ -9,6 +9,7 @@ swag:用户生成swagger文档
 https://github.com/swaggo/swag 文档编写说明
 
 go install github.com/swaggo/swag/cmd/swag@v1.8
+go install github.com/swaggo/swag/cmd/swag@latest
 
 air: 用于热重载运行
 go install github.com/cosmtrek/air@latest

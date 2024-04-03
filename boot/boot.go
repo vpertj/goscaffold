@@ -2,17 +2,19 @@ package boot
 
 import (
 	"bytes"
-	"github.com/sirupsen/logrus"
 	"goscaffold/model/config"
 	"os"
 	"path"
 	"runtime"
 	"strconv"
+
+	"github.com/sirupsen/logrus"
 )
 
 func init() {
 	cfg := config.GetConfig()
 	initLog(cfg)
+
 }
 
 func initLog(cfg *config.Config) {
