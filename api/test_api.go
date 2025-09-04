@@ -1,14 +1,15 @@
 package api
 
 import (
-	"github.com/gofiber/fiber/v2"
-	"github.com/sirupsen/logrus"
-	"github.com/vpertj/gotool"
 	"goscaffold/model"
 	"goscaffold/model/db"
 	"goscaffold/model/web"
 	"goscaffold/routes"
 	"goscaffold/service"
+
+	"github.com/gofiber/fiber/v2"
+	"github.com/sirupsen/logrus"
+	"github.com/vpertj/gotool"
 )
 
 // 初始化路由

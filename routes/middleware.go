@@ -63,6 +63,7 @@ func middlewareAuth(c *fiber.Ctx) error {
 	return c.Next()
 }
 
+// _intercept 拦截器
 func _intercept(c *fiber.Ctx) error {
 	return web.OutState(c, web.Sign, "用户未登录?")
 }

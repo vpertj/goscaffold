@@ -1,12 +1,9 @@
 package routes
 
 import (
-	"bytes"
 	"fmt"
 	"goscaffold/docs"
 	"goscaffold/model/config"
-	"os"
-	"os/exec"
 	"runtime"
 
 	"github.com/gofiber/fiber/v2"
@@ -71,18 +68,4 @@ func GetV1Router() fiber.Router {
 
 func New() *fiber.App {
 	return app
-}
-
-// 执行swag init 来初始化swagger文档
-func RunCommand() {
-	cmd := exec.Command("swag", "init")
-	fmt.Println("Cmd", cmd.Args)
-	var out bytes.Buffer
-	cmd.Stdout = &out
-	cmd.Stderr = os.Stderr
-	err := cmd.Start()
-	if err != nil {
-		fmt.Println(err)
-	}
-	fmt.Println(out.String())
 }

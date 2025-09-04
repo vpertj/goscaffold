@@ -23,14 +23,7 @@ import (
 
 func main() {
 	logrus.Info("接口开始启动")
-	routes.RunCommand()
 	app := routes.New()
 	logrus.Info(app.Listen(fmt.Sprintf(":%v", config.GetConfig().Server.Port)))
 
 }
-
-//获取短信验证码方法
-
-//用户登录接口
-
-//用户注册接口
