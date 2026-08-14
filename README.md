@@ -1,43 +1,43 @@
 # goscaffold
-使用组件
-fiber web框架
+Components used
+fiber web framework
 https://docs.gofiber.io/
 
 https://learnku.com/docs/gofiber/2.x
 ```
-swag:用户生成swagger文档
-https://github.com/swaggo/swag 文档编写说明
+swag: generates Swagger docs
+https://github.com/swaggo/swag documentation guide
 ```
 
 go install github.com/swaggo/swag/cmd/swag@latest
 ```
-air: 用于热重载运行
+air: used for hot-reload development
 go install github.com/air-verse/air@latest
 ```
 ```
-数据库访问组件 xorm db.GetOrm()
+Database access component xorm db.GetOrm()
 https://xorm.io/zh/
 ```
 ```
-日志组件 logrus
+Logging component logrus
 https://github.com/sirupsen/logrus
 ```
 ```
-数据库结构生成,依赖cgo需要安装gcc环境
+Database schema generation (requires cgo, install the gcc toolchain)
 go install xorm.io/reverse@latest
-生成命令:
+Generate with:
 reverse -f mydbtables.yml
 ```
 ```
-配置文件访问 config.GetConfig()
+Config file access config.GetConfig()
 https://github.com/jinzhu/configor
 
 ```
 ```
-lancet 工具库
+lancet utility library
 https://github.com/duke-git/lancet
 ```
 ```
-resty http请求库
+resty HTTP client library
 https://github.com/go-resty/resty
 ```
